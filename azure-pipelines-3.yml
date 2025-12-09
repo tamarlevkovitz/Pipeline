@@ -1,0 +1,25 @@
+
+trigger:
+- nano
+
+pool:
+  name: My-agent-pool
+
+parameters:
+  - name: name
+    type: string
+    default: name
+
+  - name: age
+    type: number
+    default: 18
+
+variables:
+  greet: 'hello ${{ parameters.name }}'
+
+stages:
+  - stage: num_4
+    jobs:
+      - job: num_4_job
+        steps:
+          - script: echo $(greet)
