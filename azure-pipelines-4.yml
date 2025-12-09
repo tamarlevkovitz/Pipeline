@@ -1,0 +1,30 @@
+
+trigger:
+- main
+
+pool:
+  name: My-agent-pool
+
+parameters:
+  - name: run_stage_2
+    type: boolean
+    default: true
+
+
+stages:
+  - stage: num_5
+    jobs:
+      - job: num_5_job
+        steps:
+          - script: echo stage 1 job 1
+      - job: num_5_job_2
+        steps:
+          - script: echo stage 1 job 2
+  - stage: num_5_b
+    jobs:
+      - job: num_5_job_1_b
+        steps:
+          - script: echo stage 2 job 1
+      - job: num_5_job_2_b
+        steps:
+          - script: echo "run_stage_2 = ${{ parameters.run_stage_2 }}"
