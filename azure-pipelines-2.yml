@@ -1,0 +1,18 @@
+
+trigger:
+- nano
+
+pool:
+  name: My-agent-pool
+
+parameters:
+  - name: name
+    type: string
+    default: name
+stages:
+  - stage: hello_name
+    jobs:
+      - job: hello_job_name
+        steps:
+          - script: echo "helo = ${{ parameters.name }}" 
+  
