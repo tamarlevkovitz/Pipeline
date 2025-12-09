@@ -1,0 +1,16 @@
+
+
+trigger: 
+- nano
+
+pool:
+  name: 'My-agent-pool'
+stages:
+  - stage: one stage
+    jobs:
+      - job: onejob
+        steps:
+          - script: echo Hello from my first pipeline!
+     
+
+
