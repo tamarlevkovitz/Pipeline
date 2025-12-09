@@ -1,0 +1,24 @@
+
+trigger:
+- nano
+
+pool:
+  name: My-agent-pool
+
+stages:
+  - stage: one_stage
+    jobs:
+      - job: stage_1_job_1
+        steps:
+          - script: echo one stage one job
+      - job: stage_1_job_2
+        steps:
+          - script: echo one stage second job
+  - stage: second_stage
+    jobs:
+      - job: stage_2_job_1
+        steps:
+          - script: echo second stage one job
+      - job: stage_2_job_2
+        steps:
+          - script: echo second stage second job
