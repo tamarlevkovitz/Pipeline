@@ -21,6 +21,7 @@ stages:
         steps:
           - script: echo stage 1 job 2
   - stage: num_5_b
+    condition: eq('${{ parameters.run_stage_2 }}', true)
     jobs:
       - job: num_5_job_1_b
         steps:
